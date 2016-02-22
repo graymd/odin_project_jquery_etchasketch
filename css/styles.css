@@ -2,12 +2,18 @@
   width: 960px;
 }
 
+.button {
+  text-align: center;
+  padding-bottom: 5px;
+}
 .square {
   display: inline-block;
   height: 50px;
   width: 50px;
   background: aqua;
-  border-style: solid;
   margin: 1px;
 }
 
+.newColor {
+  background: red;
+}
