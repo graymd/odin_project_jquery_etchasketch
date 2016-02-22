@@ -1,0 +1,13 @@
+#wrapper {
+  width: 960px;
+}
+
+.square {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: aqua;
+  border-style: solid;
+  margin: 1px;
+}
+
