@@ -1,18 +1,38 @@
 $(document).ready(function() {
-  for (var i = 0; i< 256; i++) {
-    $newSquare = $('<div class="square"></div>');
-    $('#wrapper').append($newSquare);
-  }
+  squareCreator(16);
 
-  $('.square').mouseover(function(){
+  $('#wrapper').on("mouseover", ".square", function(){
     $(this).addClass("newColor");
   });
 
   $('button').click(function(){
     console.log('wtf');
-    $('.square').removeClass("newColor");
-    var numSquares=prompt('how many total squares would you like?')
-      console.log(numSquares);
+    var userNumSquares = prompt('how many squares per row?');
+    clearSquares();
+    squareCreator(userNumSquares);
   });
 });
 
+function clearSquares() {
+  $('.square').removeClass("newColor");
+}
+
+function squareCreator(numSquares) {
+  var numSquaresSquared = (numSquares * numSquares)
+    for (var i=0; i< numSquaresSquared; i++) {
+      console.log('work mofo')
+        $newSquare = $('<div class="square"></div>');
+      $('#wrapper').append($newSquare);
+    }
+  setSquareHeightAndWidth(numSquares);
+}
+
+function setSquareHeightAndWidth(numSquares) {
+  var squareSize = (960 / numSquares) - 2;
+  $('.square').width(squareSize);
+  $('.square').height(squareSize);
+}
+
+function clearSquares() {
+  $('.square').remove();
+}
